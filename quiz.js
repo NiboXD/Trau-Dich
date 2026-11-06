@@ -1,4 +1,7 @@
+const labels = ['Geheim halten', 'Weitersagen'];
+
 function createCard(questionIndex) {
+  const { text: story, antwort, begruendung, hinweis } = questions[questionIndex];
   const card = document.createElement('fieldset');
   card.className = 'panel story';
   const title = document.createElement('legend');
@@ -6,7 +9,7 @@ function createCard(questionIndex) {
   card.append(title);
   const text = document.createElement('p');
   text.id = `story-${questionIndex}`;
-  text.textContent = questions[questionIndex][0];
+  text.textContent = story;
   card.setAttribute('aria-describedby', text.id);
   card.append(text);
   const options = document.createElement('div');
@@ -14,7 +17,7 @@ function createCard(questionIndex) {
   const feedback = document.createElement('p');
   feedback.className = 'answer-feedback';
   feedback.setAttribute('role', 'status');
-  const [, solution, reason, hint] = questions[questionIndex];
+
   labels.forEach((label, choice) => {
     const option = document.createElement('label');
     const input = document.createElement('input');
@@ -25,9 +28,9 @@ function createCard(questionIndex) {
     caption.className = 'option-text';
     caption.textContent = label;
     input.addEventListener('change', () => {
-      const right = choice === solution;
+      const right = label === antwort;
       feedback.className = right ? 'answer-feedback right' : 'answer-feedback wrong';
-      feedback.textContent = right ? 'Finden wir auch! ' + reason : 'Überleg noch einmal. ' + hint;
+      feedback.textContent = right ? 'Finden wir auch! ' + begruendung : 'Überleg noch einmal. ' + hinweis;
     });
     option.append(input, caption);
     options.append(option);
@@ -36,4 +39,5 @@ function createCard(questionIndex) {
   return card;
 }
 document.getElementById('cards').append(...questions.map((_, i) => createCard(i)));
+
 
