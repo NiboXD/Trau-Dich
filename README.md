@@ -6,8 +6,8 @@ Zwei interaktive Spiele für die gemeinsame Runde am Whiteboard. Die Klasse lies
 
 ## Die Spiele
 
-- **Geheimnis-Quiz** – Bei neun Geschichten entscheidet ihr gemeinsam zwischen „Geheim halten“ und „Weitersagen“. Unter jeder Geschichte seht ihr direkt eine Rückmeldung mit kurzer Erklärung. Ihr könnt eure Antwort ändern.
-- **Ampeltest** – Ihr begleitet Lina im Schwimmbad und überlegt bei jedem Abschnitt, wie sie sich wohl fühlt. Grün steht für Wohlfühlen, Gelb für Unsicherheit und Rot für ein inneres Nein. Drei Fragen schließen die Runde ab und laden zum Gespräch ein.
+- **Geheimnis-Quiz**  Bei neun Geschichten entscheidet ihr gemeinsam zwischen „Geheim halten“ und „Weitersagen“. Unter jeder Geschichte seht ihr direkt eine Rückmeldung mit kurzer Erklärung. Ihr könnt eure Antwort ändern.
+- **Ampeltest**  Ihr begleitet Lina im Schwimmbad und überlegt bei jedem Abschnitt, wie sie sich wohl fühlt. Grün steht für Wohlfühlen, Gelb für Unsicherheit und Rot für ein inneres Nein. Drei Fragen schließen die Runde ab und laden zum Gespräch ein.
 
 ## Lokal öffnen
 
