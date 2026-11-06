@@ -11,63 +11,29 @@ function createCard(questionIndex) {
   card.append(text);
   const options = document.createElement('div');
   options.className = 'options';
+  const feedback = document.createElement('p');
+  feedback.className = 'answer-feedback';
+  feedback.setAttribute('role', 'status');
+  const [, solution, reason, hint] = questions[questionIndex];
   labels.forEach((label, choice) => {
     const option = document.createElement('label');
     const input = document.createElement('input');
     input.type = 'radio';
     input.name = `answer-${questionIndex}`;
-    input.required = true;
     input.value = String(choice);
-    input.checked = hasAnswers && savedAnswers[questionIndex] === input.value;
     const caption = document.createElement('span');
     caption.className = 'option-text';
     caption.textContent = label;
+    input.addEventListener('change', () => {
+      const right = choice === solution;
+      feedback.className = right ? 'answer-feedback right' : 'answer-feedback wrong';
+      feedback.textContent = right ? 'Finden wir auch! ' + reason : 'Überleg noch einmal. ' + hint;
+    });
     option.append(input, caption);
     options.append(option);
   });
-  card.append(options);
+  card.append(options, feedback);
   return card;
 }
-const form = document.getElementById('form');
 document.getElementById('cards').append(...questions.map((_, i) => createCard(i)));
-const progressText = document.getElementById('progress-text');
-const missing = document.getElementById('missing');
-
-let markedCard;
-
-function clearMissing() {
-  markedCard?.classList.remove('missing-answer');
-  markedCard = undefined;
-  missing.hidden = true;
-}
-
-function updateProgress() {
-  const answered = form.querySelectorAll('input:checked').length;
-  progressText.textContent = `${answered} von ${questions.length} beantwortet`;
-}
-form.addEventListener('change', event => {
-  if (event.target.closest('fieldset') === markedCard) clearMissing();
-  updateProgress();
-});
-window.addEventListener('pageshow', updateProgress);
-updateProgress();
-
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  const data = new FormData(form);
-  const answers = questions.map((_, i) => data.get(`answer-${i}`));
-  const firstMissing = answers.indexOf(null);
-  if (firstMissing !== -1) {
-    clearMissing();
-    missing.hidden = false;
-    missing.textContent = `Wählt noch eine Antwort bei Geschichte ${firstMissing + 1}.`;
-    const input = form.querySelector(`[name="answer-${firstMissing}"]`);
-    markedCard = input.closest('fieldset');
-    markedCard.classList.add('missing-answer');
-    markedCard.scrollIntoView({ block: 'center' });
-    input.focus({ preventScroll: true });
-    return;
-  }
-  location.href = `auswertung.html#${answers.join('')}`;
-});
 
