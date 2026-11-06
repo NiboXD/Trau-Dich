@@ -1,0 +1,14 @@
+const questions = [
+  ['Ein Kind erzählt, dass es regelmäßig Kleidung klaut. Es sagt, wenn du es nicht weitererzählst, schenkt es dir etwas, das du dir wünschst.', 1, 'Erzähle es einer erwachsenen Person, der du vertraust. Sie kann dem Kind helfen, mit dem Klauen aufzuhören.'],
+  ['Ein Mädchen aus der 8. Klasse erzählt dir, dass sie schwanger ist. Sie traut sich nicht, es ihren Eltern oder sonst wem zu erzählen. Sie sagt, dass du es auf keinen Fall weitererzählen darfst.', 1, 'Das Mädchen braucht Unterstützung. Ihr könnt gemeinsam mit einer erwachsenen Person sprechen, der sie vertraut.'],
+  ['Dein Freund hat im Park ein Schwanennest gefunden, das ganz versteckt hinter dem Schilf liegt. Er hat Angst, dass es irgendwer kaputt macht. Deshalb zeigt er es nur dir. Du sollst niemandem von dem Geheimnis erzählen.', 0, 'Ihr könnt den Ort für euch behalten. So haben die Schwäne ihre Ruhe.'],
+  ['Deine beste Freundin/dein bester Freund erzählt dir, dass sie/er zu Hause manchmal geschlagen wird. Du sollst es aber auf keinen Fall irgendjemandem erzählen!', 1, 'Kein Kind darf geschlagen werden. Eine erwachsene Person, der du vertraust, kann helfen.'],
+  ['Deine kleine Schwester hat sich in der großen Pause vor Lachen in die Hose gepinkelt. Schnell rennt sie auf die Toilette und zieht eine Wechselhose an.', 0, 'So ein Missgeschick kann jedem passieren. Deine Schwester darf selbst entscheiden, wem sie davon erzählt.'],
+  ['Die Mutter deines besten Freundes erlaubt keine Haustiere. Als er einmal beim Spielen am See kleine Frösche findet, nimmt er sie mit nach Hause und versteckt sie im Schrank. Er nimmt sich fest vor, sie immer zu füttern.', 1, 'Ein Schrank ist kein guter Ort für Frösche. Holt eine erwachsene Person dazu, die den Tieren helfen kann.'],
+  ['Deine beste Freundin/dein bester Freund hat sich verliebt. Sie/er will aber nicht, dass du es weitererzählst, damit nicht alle sie/ihn auslachen.', 0, 'Verliebtsein ist persönlich. Du kannst respektieren, dass es unter euch bleiben soll.'],
+  ['Ein Mädchen und ein Junge werden im Garten von größeren Kindern geschlagen. Die Großen sagen, dass sie es nicht weitererzählen dürfen, sonst hauen sie noch viel doller zu. Außerdem wären sie dann Petzen.', 1, 'Bei Gewalt und Drohungen dürft ihr Hilfe holen. Erzählt einer erwachsenen Person, der ihr vertraut, was passiert ist.'],
+  ['Ein Schüler aus der 6. Klasse zeigt dir eine Zeitschrift, in der Sexbilder abgebildet sind. Dir ist das unangenehm. Der aus der 6. sagt, dass man so etwas bloß nicht seinen Eltern erzählen darf, weil es ein Geheimnis unter Kerlen wäre.', 1, 'Du darfst weggehen und einer erwachsenen Person erzählen, was passiert ist. Dein Gefühl zählt.']
+];
+const labels = ['Geheim halten', 'Weitersagen'];
+const savedAnswers = location.hash.slice(1);
+const hasAnswers = savedAnswers.length === questions.length && /^[01]+$/.test(savedAnswers);
