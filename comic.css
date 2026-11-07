@@ -1,0 +1,177 @@
+/* Shared comic design for the start page and both games. */
+:root { --paper: #ffda50; --ink: #292331; --line: #292331; --teal: #176052; }
+body { background-image: radial-gradient(#a65e1b38 1px, transparent 1px); background-size: 10px 10px; }
+header { background: #f282a4; border-bottom: 4px solid #292331; color: var(--ink); }
+.site-title { background: #ffe994; border: 2px solid var(--line); border-radius: 13px 6px 16px 5px; box-shadow: 3px 3px 0 #292331; }
+.site-title small { color: #493545; }
+h1, h2, .story legend { font-family: "Comic Sans MS", "Trebuchet MS", sans-serif; font-weight: 700; letter-spacing: -.025em; }
+h1 { color: #682950; text-shadow: 2px 2px 0 #fff8d8; font-size: clamp(2.4rem, 5.5vw, 4.6rem); }
+.panel {
+  border: 0;
+  border-radius: 13px 22px 15px 6px;
+  background-color: #fffdf2;
+  border-image: url("comic-assets/rahmen.svg") 12 / 12px / 0 stretch;
+  box-shadow: 6px 7px 0 #292331;
+}
+.story { margin-block: 1.7rem; }
+.story legend { background: #ffce36; border: 2px solid var(--line); padding: .15em .65em; border-radius: 5px 13px 4px 7px; box-shadow: 2px 2px 0 #292331; }
+.story > p:first-of-type { display: flow-root; line-height: 1.48; }
+.story > p:first-of-type::before {
+  content: "";
+  float: right;
+  width: clamp(7rem, 17vw, 13rem);
+  height: clamp(6rem, 14vw, 10rem);
+  margin: 0 0 .35rem 1rem;
+  background: var(--scene, url("comic-assets/geschichte-4.svg")) center / contain no-repeat;
+}
+.options { clear: both; gap: 1rem; }
+.options label { border: 2.5px solid var(--line); border-radius: 9px 5px 13px 6px; box-shadow: 3px 3px 0 #292331; background: #b9e3ff; }
+.options label + label { background: #ffc8a0; }
+.option-text { min-height: 4.4rem; }
+.story .answer-feedback:not(:empty) { border: 3px solid var(--line); border-radius: 13px 4px 15px 5px; margin-top: 1.2rem; padding: .7em; }
+.action, .button-link, button { border-radius: 7px 14px 6px 10px; border-width: 2px; border-color: var(--line); box-shadow: 3px 3px 0 #292331; }
+.action { background: #176052; }
+.help-note { background: #e5ccff; border: 2px solid #6c4083; border-radius: 7px 15px 6px 12px; }
+.room { transform: rotate(1deg); }
+.room [stroke] { stroke-dasharray: 68 3 19 2; }
+.room { max-height: 20rem; }
+@media (max-width: 38rem) {
+  .story > p:first-of-type::before { float: none; display: block; margin: 0 0 .6rem auto; width: 8rem; height: 6rem; }
+}
+#cards .story:nth-child(1) { --scene: url('comic-assets/geschichte-1.svg'); }
+#cards .story:nth-child(2) { --scene: url('comic-assets/geschichte-2.svg'); }
+#cards .story:nth-child(3) { --scene: url('comic-assets/geschichte-3.svg'); }
+#cards .story:nth-child(4) { --scene: url('comic-assets/geschichte-4.svg'); }
+#cards .story:nth-child(5) { --scene: url('comic-assets/geschichte-5.svg'); }
+#cards .story:nth-child(6) { --scene: url('comic-assets/geschichte-6.svg'); }
+#cards .story:nth-child(7) { --scene: url('comic-assets/geschichte-7.svg'); }
+#cards .story:nth-child(8) { --scene: url('comic-assets/geschichte-8.svg'); }
+#cards .story:nth-child(9) { --scene: url('comic-assets/geschichte-9.svg'); }
+#ampel-karten .story:nth-child(1) { --scene: url('comic-assets/schwimmbad-1.svg'); }
+#ampel-karten .story:nth-child(2) { --scene: url('comic-assets/schwimmbad-2.svg'); }
+#ampel-karten .story:nth-child(3) { --scene: url('comic-assets/schwimmbad-3.svg'); }
+#ampel-karten .story:nth-child(4) { --scene: url('comic-assets/schwimmbad-4.svg'); }
+#ampel-karten .story:nth-child(5) { --scene: url('comic-assets/schwimmbad-5.svg'); }
+
+/* Static sketch details stay inside the card background. */
+.panel {
+  background-image: url("comic-assets/schraffur.svg");
+  background-position: right .7rem bottom .45rem;
+  background-size: 3rem 1rem;
+  background-repeat: no-repeat;
+}
+.options label { border-radius: 12px 7px 16px 5px / 7px 15px 8px 13px; }
+.options label:first-child { border-bottom-width: 4px; }
+.options label + label { border-inline-end-width: 4px; }
+.action, .button-link, button { border-radius: 6px 15px 5px 11px / 12px 5px 15px 7px; border-color: #292331; }
+.story .answer-feedback.right { background: #c7efc3; color: #1e4e32; }
+.story .answer-feedback.wrong { background: #ffe090; color: #623620; }
+.ampel-options .light-green { background: #bcebc8; }
+.ampel-options .light-yellow { background: #ffe782; }
+.ampel-options .light-red { background: #ffb6b2; }
+
+/* Shared controls, help panel and interaction states. */
+button, .button-link, .site-title {
+  -webkit-tap-highlight-color: #f3d5fb;
+}
+button:focus-visible, .button-link:focus-visible, .site-title:focus-visible,
+.help-note summary:focus-visible, .help-note a:focus-visible {
+  outline: 3px solid #733f99;
+  outline-offset: 5px;
+}
+.action:active, .button-link:active { box-shadow: 1px 1px 0 #292331; }
+.help-note {
+  position: relative;
+  border: 0;
+  border-image: url("comic-assets/rahmen.svg") 12 / 12px / 0 stretch;
+  padding: .35rem .6rem;
+  box-shadow: 4px 5px 0 #292331;
+  border-radius: 9px 18px 8px 13px;
+}
+.help-note summary {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .8rem;
+  list-style: none;
+  color: #49335c;
+  font-size: 1.1rem;
+}
+.help-note summary::-webkit-details-marker { display: none; }
+.help-note summary::before {
+  content: "+";
+  display: grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  flex: 0 0 1.6em;
+  background: #ffda50;
+  border: 2px solid #292331;
+  border-radius: 5px 9px 4px 7px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.help-note[open] summary::before { content: "−"; }
+.help-note p { padding-inline: .85rem; }
+.help-note a {
+  display: inline-block;
+  color: #49335c;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .2em;
+  padding-block: .3rem;
+}
+#ampel-abschluss { margin-top: 1.7rem; }
+.room { stroke: #292331; }
+.room [stroke] { stroke: #292331; }
+
+/* One clear selection state for both games, with no changes on hover. */
+.options label { align-items: stretch; }
+.option-text {
+  align-self: stretch;
+  min-width: 0;
+  min-height: 5rem;
+  padding: .7em .8em;
+}
+.options .option-text::after {
+  content: "✓" / "";
+  visibility: hidden;
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.5em;
+  width: 1.5em;
+  height: 1.5em;
+  margin-inline-start: auto;
+  border: 3px solid #292331;
+  border-radius: 9px 13px 7px 11px;
+  background: #292331;
+  color: #fff;
+  font: 900 clamp(1.8rem, 3vw, 2.5rem)/1 "Segoe UI", sans-serif;
+}
+.options input:checked + .option-text {
+  background: #c49aef;
+  color: #292331;
+  box-shadow: inset 0 0 0 5px #292331;
+  border-radius: 7px 5px 11px 4px;
+}
+.options input:checked + .option-text::after { visibility: visible; }
+.options label:focus-within {
+  outline: 4px solid #733f99;
+  outline-offset: 5px;
+}
+@media (max-width: 38rem) {
+  .option-text { min-height: 4.5rem; }
+}
+
+
+
+/* A full-width title gives the classroom heading its own line. */
+#intro > h1 {
+  grid-column: 1 / -1;
+  font-size: clamp(1.2rem, 5.1vw, 3.6rem);
+  white-space: nowrap;
+}
+#intro > div { min-width: 0; }
+.kindergruppe { display: block; width: 100%; height: auto; }
+@media (max-width: 46rem) {
+  .kindergruppe { max-width: 27.5rem; margin-inline: auto; }
+}

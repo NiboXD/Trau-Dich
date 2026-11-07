@@ -4,6 +4,7 @@ function createCard(questionIndex) {
   const { text: story, antwort, begruendung, hinweis } = questions[questionIndex];
   const card = document.createElement('fieldset');
   card.className = 'panel story';
+  card.hidden = questionIndex !== 0;
   const title = document.createElement('legend');
   title.textContent = `Geschichte ${questionIndex + 1}`;
   card.append(title);
@@ -28,6 +29,7 @@ function createCard(questionIndex) {
     caption.className = 'option-text';
     caption.textContent = label;
     input.addEventListener('change', () => {
+      if (card.nextElementSibling) card.nextElementSibling.hidden = false;
       const right = label === antwort;
       feedback.className = right ? 'answer-feedback right' : 'answer-feedback wrong';
       feedback.textContent = right ? 'Finden wir auch! ' + begruendung : 'Überleg noch einmal. ' + hinweis;
@@ -39,5 +41,6 @@ function createCard(questionIndex) {
   return card;
 }
 document.getElementById('cards').append(...questions.map((_, i) => createCard(i)));
+
 
 

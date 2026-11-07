@@ -15,10 +15,8 @@ p { margin-block: .65em; }
 .panel { background: #fffdf5; border: 3px solid var(--line); border-radius: .35rem 1.5rem 1.5rem .35rem; padding: clamp(1rem, 3vw, 2.3rem); }
 button { font: inherit; font-weight: 750; border: 2px solid currentColor; border-radius: .65rem; padding: .55em .9em; min-height: 3rem; cursor: pointer; background: white; color: var(--ink); }
 button:disabled { opacity: .62; cursor: default; }
-button:hover { background: #e1eeee; }
 button:focus-visible, a:focus-visible { outline: 3px solid #935000; outline-offset: 4px; }
 .action { background: var(--teal); color: white; border-color: var(--teal); font-size: clamp(1.1rem, 2vw, 1.5rem); }
-.action:hover { background: #004e49; }
 .controls { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1rem; }
 a { color: var(--teal); }
 
@@ -52,8 +50,6 @@ summary:focus-visible { outline: 3px solid #935000; outline-offset: 3px; }
 .wrong { background: #fff0d5; color: #783b21; }
 .options label { padding: 0; overflow: hidden; }
 .option-text { display: flex; align-items: center; gap: .6em; flex: 1; min-height: 4rem; padding: .6em; }
-.options input:checked + .option-text { background: #f3eaff; box-shadow: inset 0 0 0 3px #7753a8; border-radius: .5rem; }
-.options input:checked + .option-text::after { content: "✓" / ""; margin-inline-start: auto; padding-inline: .4em; border-radius: 50%; background: #dfcdf6; color: #4b2b76; }
 .button-link { display: inline-block; padding: .55em .9em; border: 2px solid currentColor; border-radius: .65rem; font-weight: 750; text-decoration: none; }
 
 .story.missing-answer { border-color: #ab282e; outline: 3px solid #ab282e; outline-offset: 2px; background: #fff4f2; }
@@ -62,7 +58,6 @@ summary:focus-visible { outline: 3px solid #935000; outline-offset: 3px; }
 .help-note { margin-top: 1.25rem; background: #f3e8f8; border-color: #d3ad80; }
 .help-note summary { font-size: 1rem; }
 
-.site-title:hover, .site-title:focus-visible { background: #ffffff26; }
 .site-title small { font-size: .85rem; font-weight: 400; color: #ffe6f4; }
 
 
