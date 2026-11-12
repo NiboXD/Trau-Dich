@@ -39,13 +39,13 @@ h1 { color: #682950; text-shadow: 2px 2px 0 #fff8d8; font-size: clamp(2.4rem, 5.
   .story > p:first-of-type::before { float: none; display: block; margin: 0 0 .6rem auto; width: 8rem; height: 6rem; }
 }
 #cards .story:nth-child(1) { --scene: url('comic-assets/geschichte-1.svg'); }
-#cards .story:nth-child(2) { --scene: url('comic-assets/geschichte-2.svg'); }
-#cards .story:nth-child(3) { --scene: url('comic-assets/geschichte-3.svg'); }
-#cards .story:nth-child(4) { --scene: url('comic-assets/geschichte-4.svg'); }
-#cards .story:nth-child(5) { --scene: url('comic-assets/geschichte-5.svg'); }
-#cards .story:nth-child(6) { --scene: url('comic-assets/geschichte-6.svg'); }
-#cards .story:nth-child(7) { --scene: url('comic-assets/geschichte-7.svg'); }
-#cards .story:nth-child(8) { --scene: url('comic-assets/geschichte-8.svg'); }
+#cards .story:nth-child(2) { --scene: url('comic-assets/geschichte-3.svg'); }
+#cards .story:nth-child(3) { --scene: url('comic-assets/geschichte-4.svg'); }
+#cards .story:nth-child(4) { --scene: url('comic-assets/geschichte-5.svg'); }
+#cards .story:nth-child(5) { --scene: url('comic-assets/geschichte-6.svg'); }
+#cards .story:nth-child(6) { --scene: url('comic-assets/geschichte-7.svg'); }
+#cards .story:nth-child(7) { --scene: url('comic-assets/geschichte-8.svg'); }
+#cards .story:nth-child(8) { --scene: url('comic-assets/geschichte-2.svg'); }
 #cards .story:nth-child(9) { --scene: url('comic-assets/geschichte-9.svg'); }
 #ampel-karten .story:nth-child(1) { --scene: url('comic-assets/schwimmbad-1.svg'); }
 #ampel-karten .story:nth-child(2) { --scene: url('comic-assets/schwimmbad-2.svg'); }

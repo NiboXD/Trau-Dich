@@ -6,12 +6,6 @@ const questions = [
     hinweis: 'Was könnte passieren, wenn niemand merkt, dass das Kind immer wieder Kleidung klaut?',
   },
   {
-    text: 'Ein Mädchen aus der 8. Klasse erzählt dir, dass sie schwanger ist. Sie traut sich nicht, es ihren Eltern oder sonst wem zu erzählen. Sie sagt, dass du es auf keinen Fall weitererzählen darfst.',
-    antwort: 'Weitersagen',
-    begruendung: 'Das Mädchen braucht Unterstützung. Ihr könnt gemeinsam mit einer erwachsenen Person sprechen, der sie vertraut.',
-    hinweis: 'Wer könnte der Schülerin helfen, wenn sie mit der Situation gerade allein ist?',
-  },
-  {
     text: 'Dein Freund hat im Park ein Schwanennest gefunden, das ganz versteckt hinter dem Schilf liegt. Er hat Angst, dass es irgendwer kaputt macht. Deshalb zeigt er es nur dir. Du sollst niemandem von dem Geheimnis erzählen.',
     antwort: 'Geheim halten',
     begruendung: 'Ihr könnt den Ort für euch behalten. So haben die Schwäne ihre Ruhe.',
@@ -48,11 +42,18 @@ const questions = [
     hinweis: 'Was können die beiden tun, damit sie mit den Drohungen und der Gewalt nicht allein bleiben?',
   },
   {
+    text: 'Ein Mädchen aus der 8. Klasse erzählt dir, dass sie schwanger ist. Sie traut sich nicht, es ihren Eltern oder sonst wem zu erzählen. Sie sagt, dass du es auf keinen Fall weitererzählen darfst.',
+    antwort: 'Weitersagen',
+    begruendung: 'Das Mädchen braucht Unterstützung. Ihr könnt gemeinsam mit einer erwachsenen Person sprechen, der sie vertraut.',
+    hinweis: 'Wer könnte der Schülerin helfen, wenn sie mit der Situation gerade allein ist?',
+  },
+  {
     text: 'Ein Schüler aus der 6. Klasse zeigt dir auf seinem Handy sexuelle Bilder. Das ist dir unangenehm. Er sagt, du sollst es deinen Eltern bloß nicht erzählen. Das sei ein Geheimnis unter Jungs.',
     antwort: 'Weitersagen',
     begruendung: 'Du darfst weggehen und einer erwachsenen Person erzählen, was passiert ist. Dein Gefühl zählt.',
     hinweis: 'Darfst du dir Hilfe holen, wenn dir die Bilder unangenehm sind und jemand von dir verlangt, zu schweigen?',
   },
 ];
+
 
 
